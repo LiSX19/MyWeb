@@ -1,0 +1,335 @@
+/* 全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* 响应式布局 */
+@media (max-width: 1200px) {
+    .main-content {
+        width: 70%;
+    }
+    .sidebar {
+        width: 25%;
+    }
+}
+
+@media (max-width: 992px) {
+    .main-content {
+        width: 65%;
+    }
+    .sidebar {
+        width: 30%;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-content, .sidebar {
+        width: 100%;
+        float: none;
+        margin: 30px auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .main-content {
+        padding: 15px;
+    }
+    .sidebar {
+        padding: 15px;
+    }
+    .avatar {
+        width: 30vw;
+        height: 30vw;
+    }
+}
+
+/* 导航栏样式 */
+/* 导航栏容器 */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #e1e1e1;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+}
+
+.navbar:hover {
+    transform: translateY(-2px);
+}
+
+/* 导航链接 */
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-right: 20px;
+    flex-wrap: wrap; /* 允许导航项换行 */
+}
+
+.nav-links li {
+    margin-left: 20px;
+    margin-bottom: 10px; /* 为小屏幕添加底部间距 */
+}
+
+.nav-links a {
+    color: #333;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    white-space: nowrap; /* 防止文本换行 */
+}
+
+.nav-links a:hover {
+    background-color: #f0f0f0;
+    color: #007bff;
+    transform: translateY(-2px);
+}
+
+.nav-links a.active {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Logo样式 */
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-left: 20px;
+}
+
+.logo:hover {
+    transform: translateY(-2px);
+}
+
+.logo-icon {
+    width: 28px;
+    height: 28px;
+    margin-right: 10px;
+}
+
+.logo-text {
+    font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.logo:hover .logo-text {
+    color: #007bff;
+    text-shadow: 1px 1px 3px rgba(0,123,255,0.2);
+}
+
+/* 主内容区布局 */
+.main-content {
+    float: left;
+    width: 60%;
+    margin: 30px 0;
+    margin-left: 1%;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+/* 侧边栏样式 */
+.sidebar {
+    float: right;
+    width: 25%;
+    margin: 30px 30px 30px 0;
+}
+
+/* 文章卡片样式 */
+.post {
+    background: rgb(255, 255, 255, 0.8);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+    border: 1px solid #ffffff;
+    max-height: 150px; /* 初始高度限制 */
+    overflow: hidden; /* 隐藏超出内容 */
+    transition: all 0.5s ease; /* 平滑过渡效果 */
+}
+
+.post:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    max-height: 500px; /* 悬停时扩展高度 */
+}
+
+.post h2 {
+    cursor: pointer; /* 鼠标悬停时显示手型指针 */
+}
+
+.post h2 a {
+    color: inherit; /* 继承父元素颜色 */
+    text-decoration: none; /* 移除下划线 */
+}
+
+.post h2 a:hover {
+    color: #007bff; /* 悬停时改变颜色 */
+    text-decoration: underline; /* 添加下划线 */
+}
+
+.post-excerpt {
+    display: none; /* 初始隐藏摘要 */
+}
+
+.post:hover .post-excerpt {
+    display: block; /* 悬停时显示摘要 */
+    animation: fadeIn 0.5s ease; /* 淡入动画 */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.read-more {
+    background: rgb(255, 255, 255, 0.8);
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+    border: 1px solid #ffffff;
+    transition: all 0.3s ease;
+}
+
+/* 侧边栏内容样式 */
+.sidebar > div {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    border: 1px solid #eaeaea;
+    transition: all 0.3s ease;
+}
+
+.sidebar > div:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* 新增侧边栏分类样式 */
+.category-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.category-list li {
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.category-list li:hover {
+    transform: translateX(5px);
+}
+
+.category-list a {
+    display: flex;
+    align-items: center;
+    color: #333;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    background-color: rgba(255,255,255,0.7);
+    transition: all 0.3s ease;
+}
+
+.category-list a:hover {
+    background-color: rgba(0,123,255,0.1);
+    color: #007bff;
+}
+
+.category-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    transition: all 0.3s ease;
+}
+
+.category-list a:hover .category-icon {
+    transform: scale(1.1);
+}
+
+/* 美化关于我区块 */
+.about-me {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.about-me p {
+    margin: 10px 0;
+    color: #555;
+    font-size: 14px;
+}
+
+/* 页脚样式 */
+.footer {
+    clear: both; /* 新增：确保页脚不会与浮动元素重叠 */
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    border-top: 1px solid #e1e1e1;
+    box-shadow: 0 -2px 15px rgba(0,0,0,0.03);
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+}
+
+.footer:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.05);
+}
+
+/* 视频背景样式 */
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.video-background video {
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+}
+
+/* 头像样式 */
+.avatar {
+    width: 10vw; /* 使用视口宽度单位，随窗口大小缩放 */
+    height: 10vw; /* 保持宽高相同 */
+    min-width: 80px; /* 设置最小尺寸 */
+    min-height: 80px; /* 设置最小尺寸 */
+    max-width: 150px; /* 设置最大尺寸 */
+    max-height: 150px; /* 设置最大尺寸 */
+    border-radius: 50%;
+    object-fit: cover;
+    transition: all 0.3s ease; /* 添加平滑过渡效果 */
+    display: block;
+    margin: 0 auto 15px; /* 居中显示 */
+}
+
+@media (max-width: 768px) {
+    .avatar {
+        width: 20vw; /* 在移动端显示更大 */
+        height: 20vw;
+    }
+}
